@@ -40,6 +40,18 @@ const FilterMachinesWebsite = () => {
     );
     const [selectedProject, setSelectedProject] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedPartner, setSelectedPartner] = useState(null);
+    const [isModalOpen_, setIsModalOpen_] = useState(false);
+
+    const openModal_ = (partner) => {
+        setSelectedPartner(partner);
+        setIsModalOpen_(true);
+    };
+
+    const closeModal_ = () => {
+        setIsModalOpen_(false);
+        setSelectedPartner(null);
+    };
 
     const openModal = (project) => {
         setSelectedProject(project);
@@ -731,7 +743,7 @@ const FilterMachinesWebsite = () => {
 
                     <div className="text-center mt-12">
                         <Link
-                            to={'projects'}
+                            to={"projects"}
                             className="px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors"
                         >
                             {currentLang == "en"
@@ -775,6 +787,7 @@ const FilterMachinesWebsite = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                         {partners.map((partner) => (
                             <div
+                                onClick={() => openModal_(partner)}
                                 key={partner.id}
                                 className="p-4 rounded-md hover:shadow-xl transition-shadow"
                             >
@@ -787,6 +800,23 @@ const FilterMachinesWebsite = () => {
                         ))}
                     </div>
                 </div>
+                {isModalOpen_ && selectedPartner && (
+                    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+                        <div className="bg-white rounded-lg p-4 max-w-3xl w-[500px] relative h-[700px]">
+                            <button
+                                onClick={closeModal_}
+                                className="absolute top-2 right-2 text-gray-600 hover:text-black text-2xl"
+                            >
+                                &times;
+                            </button>
+                            <img
+                                src={selectedPartner.image}
+                                alt={selectedPartner.name}
+                                className="w-full h-full rounded-md object-contain"
+                            />
+                        </div>
+                    </div>
+                )}
             </section>
 
             {/* Clients Section */}
@@ -935,6 +965,7 @@ const FilterMachinesWebsite = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {certificates.map((certificate) => (
                             <div
+                                onClick={() => openModal_(certificate)}
                                 key={certificate.id}
                                 className="bg-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow flex flex-col items-center text-center"
                             >
@@ -947,6 +978,23 @@ const FilterMachinesWebsite = () => {
                         ))}
                     </div>
                 </div>
+                {isModalOpen_ && selectedPartner && (
+                    <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+                        <div className="bg-white rounded-lg p-4 max-w-3xl w-[500px] relative h-[700px]">
+                            <button
+                                onClick={closeModal_}
+                                className="absolute top-2 right-2 text-gray-600 hover:text-black text-2xl"
+                            >
+                                &times;
+                            </button>
+                            <img
+                                src={selectedPartner.image}
+                                alt={selectedPartner.name}
+                                className="w-full h-full rounded-md object-contain"
+                            />
+                        </div>
+                    </div>
+                )}
             </section>
 
             {/* Contact Section */}
