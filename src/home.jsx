@@ -19,12 +19,8 @@ import {
 import Banner1 from "./assets/banner1.jpg";
 import Banner2 from "./assets/banner2.webp";
 import Banner3 from "./assets/banner3.jpg";
-import Category1 from "./assets/category1.jpg";
-import Category2 from "./assets/category2.webp";
-import Category3 from "./assets/category3.jpg";
-import Category4 from "./assets/category4.webp";
-import Category5 from "./assets/category5.jpeg";
-import Category6 from "./assets/category6.webp";
+import CountUp from "react-countup";
+
 import Logo from "./assets/logo.png";
 import { GetData } from "./service";
 import ProjectModal from "./components/ProjectModal";
@@ -524,14 +520,20 @@ const FilterMachinesWebsite = () => {
                             className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-white text-center px-4">
-                            <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                            <h1
+                                className="text-3xl md:text-5xl font-bold mb-4"
+                                data-aos="fade-up"
+                            >
                                 {currentLang == "en"
                                     ? slide.titleen
                                     : currentLang == "uz"
                                     ? slide.titleuz
                                     : slide.titleru}
                             </h1>
-                            <p className="text-lg md:text-xl max-w-2xl">
+                            <p
+                                className="text-lg md:text-xl max-w-2xl"
+                                data-aos="fade-up"
+                            >
                                 {currentLang == "en"
                                     ? slide.descriptionen
                                     : currentLang == "uz"
@@ -588,7 +590,10 @@ const FilterMachinesWebsite = () => {
             <section id="categories" className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-800">
+                        <h2
+                            className="text-3xl font-bold text-gray-800"
+                            data-aos="fade-up"
+                        >
                             {currentLang == "en"
                                 ? "Our Filtration Solutions"
                                 : currentLang == "uz"
@@ -602,6 +607,7 @@ const FilterMachinesWebsite = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {categories.map((category) => (
                             <div
+                                data-aos="fade-up"
                                 key={category.id}
                                 className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                             >
@@ -663,7 +669,22 @@ const FilterMachinesWebsite = () => {
                         {statistics.map((stat) => (
                             <div key={stat.id} className="p-6">
                                 <div className="text-4xl md:text-5xl font-bold mb-2">
-                                    {stat.value}
+                                    <CountUp
+                                        end={parseFloat(
+                                            stat.value.replace(/[^\d.]/g, "")
+                                        )}
+                                        duration={2}
+                                        suffix={
+                                            stat.value.includes("%")
+                                                ? "%"
+                                                : stat.value.includes("+")
+                                                ? "+"
+                                                : ""
+                                        }
+                                        decimals={
+                                            stat.value.includes(".") ? 1 : 0
+                                        }
+                                    />
                                 </div>
                                 <div className="text-lg uppercase tracking-wider">
                                     {currentLang == "en"
@@ -684,7 +705,10 @@ const FilterMachinesWebsite = () => {
             <section id="projects" className="py-16 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-800">
+                        <h2
+                            className="text-3xl font-bold text-gray-800"
+                            data-aos="fade-up"
+                        >
                             {currentLang == "en"
                                 ? "Our Recent Projects"
                                 : currentLang == "uz"
@@ -698,6 +722,7 @@ const FilterMachinesWebsite = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8">
                         {projects.map((project) => (
                             <div
+                                data-aos="fade-up"
                                 key={project.id}
                                 className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                             >
@@ -768,7 +793,10 @@ const FilterMachinesWebsite = () => {
             <section id="partners" className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-800">
+                        <h2
+                            className="text-3xl font-bold text-gray-800"
+                            data-aos="fade-up"
+                        >
                             {currentLang == "en"
                                 ? "Our Partners"
                                 : currentLang == "uz"
@@ -787,6 +815,7 @@ const FilterMachinesWebsite = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                         {partners.map((partner) => (
                             <div
+                                data-aos="flip-left"
                                 onClick={() => openModal_(partner)}
                                 key={partner.id}
                                 className="p-4 rounded-md hover:shadow-xl transition-shadow"
@@ -851,7 +880,10 @@ const FilterMachinesWebsite = () => {
             <section id="branches" className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-800">
+                        <h2
+                            className="text-3xl font-bold text-gray-800"
+                            data-aos="fade-up"
+                        >
                             {currentLang == "en"
                                 ? "Our Branches"
                                 : currentLang == "uz"
@@ -863,6 +895,7 @@ const FilterMachinesWebsite = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {branches.map((branch) => (
                             <div
+                                data-aos="flip-left"
                                 key={branch.id}
                                 className="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
                             >
@@ -946,7 +979,10 @@ const FilterMachinesWebsite = () => {
             <section id="certificates" className="py-16 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-800">
+                        <h2
+                            className="text-3xl font-bold text-gray-800"
+                            data-aos="fade-up"
+                        >
                             {currentLang == "en"
                                 ? "Our Certificates"
                                 : currentLang == "uz"
@@ -965,6 +1001,7 @@ const FilterMachinesWebsite = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {certificates.map((certificate) => (
                             <div
+                                data-aos="fade-up"
                                 onClick={() => openModal_(certificate)}
                                 key={certificate.id}
                                 className="bg-white rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow flex flex-col items-center text-center"
