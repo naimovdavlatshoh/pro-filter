@@ -52,14 +52,18 @@ const Products = () => {
             ? "Loading..."
             : lang === "ru"
             ? "Загрузка..."
-            : "Yuklanmoqda...";
+            : lang === "uz"
+            ? "Yuklanmoqda..."
+            : "Загрузка...";
 
     const notFoundText =
         lang === "en"
             ? "No products found."
             : lang === "ru"
             ? "Товары не найдены."
-            : "Hech qanday mahsulot topilmadi.";
+            : lang === "uz"
+            ? "Hech qanday mahsulot topilmadi."
+            : "Товары не найдены.";
 
     return (
         <div className="min-h-screen bg-gray-100 p-4">

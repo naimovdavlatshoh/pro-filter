@@ -62,7 +62,9 @@ const Projectsall = () => {
             ? "No project found."
             : lang === "ru"
             ? "Проекты не найдены."
-            : "Hech qanday loyiha topilmadi.";
+            : lang === "uz"
+            ? "Hech qanday loyiha topilmadi."
+            : "Проекты не найдены.";
 
     return (
         <div className="min-h-screen bg-gray-100 p-4">
