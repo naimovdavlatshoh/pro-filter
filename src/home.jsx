@@ -84,7 +84,7 @@ const FilterMachinesWebsite = () => {
             descriptionen:
                 "High-quality water and air filtration systems for industrial applications",
             descriptionru:
-                "Высококачественные системы фильтрации воды и воздуха для промышленного применения",
+                "Высококачественные системы фильтрации воды для промышленного и хозяйственного применения",
             descriptionuz:
                 "Sanoat ilovalari uchun yuqori sifatli suv va havo filtrlash tizimlari",
         },

@@ -30,10 +30,22 @@ const Products = () => {
     };
 
     const backText =
-        lang === "en" ? "Go Back" : lang === "ru" ? "Назад" : "Orqaga";
+        lang === "en"
+            ? "Go Back"
+            : lang === "ru"
+            ? "Назад"
+            : lang === "uz"
+            ? "Orqaga"
+            : "Назад";
 
     const title =
-        lang === "en" ? "Products" : lang === "ru" ? "Продукты" : "Mahsulotlar";
+        lang === "en"
+            ? "Products"
+            : lang === "ru"
+            ? "Продукты"
+            : lang === "uz"
+            ? "Mahsulotlar"
+            : "Продукты";
 
     const loadingText =
         lang === "en"

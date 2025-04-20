@@ -31,17 +31,31 @@ const Projectsall = () => {
     };
 
     const backText =
-        lang === "en" ? "Go Back" : lang === "ru" ? "Назад" : "Orqaga";
+        lang === "en"
+            ? "Go Back"
+            : lang === "ru"
+            ? "Назад"
+            : lang === "uz"
+            ? "Orqaga"
+            : "Назад";
 
     const title =
-        lang === "en" ? "Projects" : lang === "ru" ? "Проекты" : "Loyihalar";
+        lang === "en"
+            ? "Projects"
+            : lang === "ru"
+            ? "Проекты"
+            : lang === "uz"
+            ? "Loyihalar"
+            : "Проекты";
 
     const loadingText =
         lang === "en"
             ? "Loading..."
             : lang === "ru"
             ? "Загрузка..."
-            : "Yuklanmoqda...";
+            : lang === "uz"
+            ? "Yuklanmoqda..."
+            : "Загрузка...";
 
     const notFoundText =
         lang === "en"
