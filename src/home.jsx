@@ -145,8 +145,8 @@ const FilterMachinesWebsite = () => {
             id: 1,
             value: "500+",
             labelen: "Clients Worldwide",
-            labeluz: "Mamlakatlar soni",
-            labelru: "Клиенты по всему миру",
+            labeluz: "Mijozlar dunyo bo'yicha",
+            labelru: "Клиентов по всему миру",
         },
         {
             id: 2,
@@ -157,7 +157,7 @@ const FilterMachinesWebsite = () => {
         },
         {
             id: 3,
-            value: "30+",
+            value: "10+",
             labelen: "Years Experience",
             labeluz: "Yillik tajriba",
             labelru: "Лет опыта",
