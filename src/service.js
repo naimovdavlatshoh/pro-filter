@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 
-export const BASE_URL = "https://pro-filter.ibosh-dev.uz/api/";
+export const BASE_URL = "http://89.169.47.171:1001/api/";
 
 export const Token = localStorage.getItem("token");
 
